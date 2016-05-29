@@ -17,6 +17,24 @@ body
 	color: #fff;
 }
 
+#link-to-app-store,
+#download-link-form {
+    display: none;
+}
+
+#download-link-form .error {
+    outline: 3px solid red;
+}
+
+#download-link-form .success {
+    color: #FE7545;
+    font-weight: bold;
+    font-family: arial;
+    font-size: 40px;
+    text-align: center;
+    text-shadow: 1px 1px 0px white;
+}
+
 h1 { 
     margin-top: 0;
     /*margin-bottom: 25px; */
