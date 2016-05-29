@@ -35,7 +35,7 @@ $(function() {
         ga('send', 'event', {
             eventCategory: 'Download Link - Form Submission',
             eventAction: 'Successful Submission!',
-            eventLabel: phoneNumber.toString();
+            eventLabel: phoneNumber.toString()
         });
 
         var height = $form.height();
@@ -61,7 +61,7 @@ $(function() {
                 ga('send', 'event', {
                     eventCategory: 'Download Link - Form Submission',
                     eventAction: 'Attempted Submission',
-                    eventLabel: phoneNumber.toString();
+                    eventLabel: phoneNumber.toString()
                 });
 
                 $.ajax({
