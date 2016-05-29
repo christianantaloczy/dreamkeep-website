@@ -31,7 +31,13 @@ $(function() {
     -----------------------------------------------*/
     var $form = $('#download-link-form');
 
-    var handleFormSuccess = function() {
+    var handleFormSuccess = function(phoneNumber) {
+        ga('send', 'event', {
+            eventCategory: 'Download Link - Form Submission',
+            eventAction: 'Successful Submission!',
+            eventLabel: phoneNumber.toString();
+        });
+
         var height = $form.height();
 
         $form.css('height', height).html('<span class="success">Check your phone!</span>');
@@ -52,6 +58,12 @@ $(function() {
             $field.addClass('error');
             $field.val("");
         } else {
+                ga('send', 'event', {
+                    eventCategory: 'Download Link - Form Submission',
+                    eventAction: 'Attempted Submission',
+                    eventLabel: phoneNumber.toString();
+                });
+
                 $.ajax({
                     type: "POST",
                     url: "form/process-request.php",
@@ -60,7 +72,7 @@ $(function() {
                     },
                     success: function(response) {
                         if (response === "success") {
-                            handleFormSuccess();
+                            handleFormSuccess(phoneNumber);
                         } else {
                             $field.addClass('error');
                             $field.val("");
