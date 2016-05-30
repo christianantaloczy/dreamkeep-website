@@ -44,6 +44,7 @@ $(function() {
 
         setTimeout(function() {
             $('.contact-form.download').hide();
+            $('.col-xs-6').removeClass('col-xs-6').addClass('col-xs-6');
         }, 4000);
     }
 
