@@ -71,6 +71,7 @@ $(function() {
                         phoneNumber: phoneNumber
                     },
                     success: function(response) {
+                        console.log(response);
                         if (response === "success") {
                             handleFormSuccess(phoneNumber);
                         } else {
